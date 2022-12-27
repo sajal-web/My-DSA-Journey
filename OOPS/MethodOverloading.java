@@ -1,4 +1,4 @@
-public class MethodOverriding{
+public class MethodOverloading{
     public static void main(String args[]){
         Calculator myC = new Calculator();
         System.out.println(myC.sum(12,23));
