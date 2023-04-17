@@ -3,8 +3,11 @@ public class basicSortingAlgo{
     public static void main(String args[]){
         int arr[] = { 5,4,1,3,2};
         // bubbleSort(arr);
-        Arrays.sort(arr); // inbuilt sort accending
-        Arrays.sort(arr,0,3); // sort upto a specific index position of the array
+        // Arrays.sort(arr); // inbuilt sort accending
+        // Arrays.sort(arr,0,3); // sort upto a specific index position of the array
+        // Arrays.sort(arr,Collections.reverseOrder()); 
+        // Arrays.sort(arr,0,3,Collections.reverseOrder()); we need to change all int to Integer to use this function
+        
         printArray(arr);
         
     }
