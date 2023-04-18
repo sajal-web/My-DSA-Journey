@@ -7,11 +7,12 @@ public class basicSortingAlgo{
         // Arrays.sort(arr,0,3); // sort upto a specific index position of the array
         // Arrays.sort(arr,Collections.reverseOrder()); 
         // Arrays.sort(arr,0,3,Collections.reverseOrder()); we need to change all int to Integer to use this function
-        countingSort(arr);
+        // countingSort(arr);
+        selectionSort(arr);
         printArray(arr);
         
     }
-    static void insertionSort(int arr[]){
+    static void selectionSort(int arr[]){
         for(int i = 0;i<arr.length-1;i++){
             int minPos = i;
             for(int j = i+1;j<arr.length;j++){
