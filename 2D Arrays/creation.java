@@ -9,6 +9,7 @@ public class creation{
             }
         }
         printArray(matrix);
+       System.out.print( searchElement(matrix,5));
 
     }
     static void printArray(int matrix[][]){
@@ -18,5 +19,15 @@ public class creation{
             }
             System.out.println();
         }
+    }
+    static int searchElement(int matrix[][],int key){
+        for(int i = 0; i < matrix.length;i++){
+            for(int j = 0; j < matrix[0].length; j++){
+                if(matrix[i][j] == key){
+                    return matrix[i][j];
+                }
+            }
+        }
+        return 0;
     }
 }
