@@ -1,13 +1,13 @@
 import java.util.*;
 public class basicSortingAlgo{
     public static void main(String args[]){
-        int arr[] = { 5,4,1,3,2};
+        int arr[] = { 1,4,1,3,2,7,4,3};
         // bubbleSort(arr);
         // Arrays.sort(arr); // inbuilt sort accending
         // Arrays.sort(arr,0,3); // sort upto a specific index position of the array
         // Arrays.sort(arr,Collections.reverseOrder()); 
         // Arrays.sort(arr,0,3,Collections.reverseOrder()); we need to change all int to Integer to use this function
-        
+        countingSort(arr);
         printArray(arr);
         
     }
@@ -39,6 +39,27 @@ public class basicSortingAlgo{
                     arr[j+1] = arr[j];
                     arr[j] = temp;
                 }
+            }
+        }
+    }
+    static void countingSort(int arr[]){
+        // find out the largest element from the array
+        int largest = Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            largest = Math.max(largest,arr[i]);
+        }
+        // now let's create the count array size where i can store the frequency of the elements
+        int count[] = new int[largest+1];
+        for(int i =0;i<arr.length;i++){
+            count[arr[i]]++;
+        }
+        // sorting logic
+        int j =0;
+        for(int i =0;i<count.length;i++){
+            while(count[i] > 0){
+                arr[j] = i;
+                j++;
+                count[i]--;
             }
         }
     }
