@@ -8,7 +8,8 @@ public class basicSortingAlgo{
         // Arrays.sort(arr,Collections.reverseOrder()); 
         // Arrays.sort(arr,0,3,Collections.reverseOrder()); we need to change all int to Integer to use this function
         // countingSort(arr);
-        selectionSort(arr);
+        // selectionSort(arr);
+        insertionSort(arr);
         printArray(arr);
         
     }
@@ -63,5 +64,20 @@ public class basicSortingAlgo{
                 count[i]--;
             }
         }
+    }
+    static void insertionSort(int arr[]){
+        for(int i =1;i<arr.length;i++){
+        // let's define the required variables to perfor this sorting algo
+        int curr = arr[i];
+        int prev = i - 1;
+        // now let's check the right positon to insert the curr element
+        while(prev >=0 && arr[prev] > curr){
+            arr[prev+1] = arr[prev];
+            prev--;
+        }
+        // put curr now in the right pos
+        arr[prev+1] = curr;
+        }
+        
     }
 }
