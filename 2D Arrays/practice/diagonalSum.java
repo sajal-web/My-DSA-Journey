@@ -7,6 +7,7 @@ public class diagonalSum{
             {13,14,15,16}
         };
         diagonalSumLogicBrutForce(matrix);
+        diagonalsumLogicOptimized(matrix);
     }
     static void diagonalSumLogicBrutForce(int matrix[][]){
         // brute force approach in this approach we check the primary diagonal : 
@@ -28,6 +29,20 @@ public class diagonalSum{
             }
         }
         System.out.print(sum);
+        System.out.println();
     }
-    
+    static void diagonalsumLogicOptimized(int matrix[][]){
+        // here we use same logic just use only one loop and through out this loop we are going to
+        // get the value of j to calculate secoundary diagonal sum..
+        // i+j = n-1 --> j = n-1-i;
+        int sum =0;
+        for(int i =0;i<matrix.length;i++){
+            //  primary diagonal sum where i == i;
+            sum += matrix[i][i];
+            //  secoundary diagonal where i+j = n-1; --> i = n-1-j; because n * n matrix where n = n;
+            sum += matrix[i][matrix.length-1-i];
+        }
+        System.out.println("Here is the optimized approach....");
+        System.out.print(sum);
+    }
 }
